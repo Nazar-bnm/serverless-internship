@@ -5,15 +5,25 @@ Success Response:
 ```
 Status Code: 200
 Response:
- {
-    "id": string,
-    "title": string,
-    "price": {
-      "value": integer,
-      "currency": string
-    },
-    "image": string (location or URL)
-  }
+[
+    {
+        "productId": string,
+        "category" : {
+            "id": string
+            "name": string,
+        },
+        "subCategory" : {
+            "id": string
+            "name": string,
+        },
+        "title": string,
+        "price": {
+            "value": integer,
+            "currency": string
+        },
+        "image": string (location or URL)
+    }
+]
 ```
 Error Response:
 ```
