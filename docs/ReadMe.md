@@ -11,6 +11,12 @@ Response:
 {
   "categoryId": string,
   "categoryName": string,
+  "subCategories": [
+    {
+      "id": string,
+      "name": "string"
+    }
+  ]
 }
 ```
 
@@ -174,7 +180,8 @@ Content: { error : "Page doesn't exist" }
 ```
 
 > # GET /related-products/{category}/{sub-category}
->
+
+
 > [category and sub-category is required]
 
 ## Access data of related to current items
