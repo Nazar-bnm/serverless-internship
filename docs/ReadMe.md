@@ -1,7 +1,9 @@
-># GET /most-popular
->
+> # GET /most-popular
+
 ## Access data of most popular items
+
 Success Response:
+
 ```
 Status Code: 200
 Response:
@@ -25,40 +27,89 @@ Response:
     }
 ]
 ```
+
 Error Response:
+
 ```
 Code: 404 NOT FOUND
 Content: { error : "Page doesn't exist" }
 ```
 
-># GET /products/{category}/{sub-category}/{id}
->[category, sub-category and id is required]
-## Access list of items that are stored under spesific sub-category
+> # GET /products/{category}
+>
+> [category, sub-category and id is required]
+
+## Access list of items that are stored under specific category
+
 ### Should access /product/{id} first and then use only required fields
+
 Success Response:
+
 ```
 Status Code: 200
 Response:
  {
-    "id": string
-    "title": string,
-    "price": {
-      "value": integer,
-      "currency": string
-    },
-    "image": string (URL or location)
-  }
+  "categoryId": string,
+  "categoryName": string,
+}
 ```
+
 Error Response:
+
 ```
 Code: 404 NOT FOUND
 Content: { error : "Page doesn't exist" }
 ```
 
-># GET /product/{id}
->[id is required]
-## Access data of particular items
+> # GET /products/{sub-category}
+>
+> [category, sub-category and id is required]
+
+## Access list of items that are stored under specific sub-category
+
+### Should access /product/{id} first and then use only required fields
+
 Success Response:
+
+```
+Status Code: 200
+Response:
+ {
+  "subCategoryId": string,
+  "subCategoryName": string,
+  "category": {
+    "id": string,
+    "name": string,
+  },
+  "products": [
+    {
+      "id": string
+      "title": string,
+      "price": {
+        "value": integer,
+        "currency": string
+      },
+      "image": string (URL or location)
+    }
+  ]
+}
+```
+
+Error Response:
+
+```
+Code: 404 NOT FOUND
+Content: { error : "Page doesn't exist" }
+```
+
+> # GET /product/{id}
+>
+> [id is required]
+
+## Access data of particular items
+
+Success Response:
+
 ```
 Status Code: 200
 Response:
@@ -66,7 +117,7 @@ Response:
     "id": string,
     "name": string,
     "description": string,
-    "shortDescritpion": "string,
+    "shortDescription": "string,
     "type": string,
     "dimensions": {
       "width": string,
@@ -117,16 +168,22 @@ Response:
     "images": [string (URL or location)]
   }
 ```
+
 Error Response:
+
 ```
 Code: 404 NOT FOUND
 Content: { error : "Page doesn't exist" }
 ```
 
-># GET /related-products/{category}/{sub-category}
->[category and sub-category is required]
+> # GET /related-products/{category}/{sub-category}
+>
+> [category and sub-category is required]
+
 ## Access data of related to current items
+
 Success Response:
+
 ```
 Status Code: 200
 Response:
@@ -140,7 +197,9 @@ Response:
     "image": string (location or URL)
   }
 ```
+
 Error Response:
+
 ```
 Code: 404 NOT FOUND
 Content: { error : "Page doesn't exist" }
