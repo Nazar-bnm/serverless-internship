@@ -35,12 +35,9 @@ Code: 404 NOT FOUND
 Content: { error : "Page doesn't exist" }
 ```
 
-> # GET /products/{category}
->
-> [category, sub-category and id is required]
-
+># GET /products/{category}
+>[category is required]
 ## Access list of items that are stored under specific category
-
 ### Should access /product/{id} first and then use only required fields
 
 Success Response:
@@ -63,7 +60,7 @@ Content: { error : "Page doesn't exist" }
 
 > # GET /products/{sub-category}
 >
-> [category, sub-category and id is required]
+> [sub-category is required]
 
 ## Access list of items that are stored under specific sub-category
 
