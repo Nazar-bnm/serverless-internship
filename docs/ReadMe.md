@@ -31,16 +31,42 @@ Code: 404 NOT FOUND
 Content: { error : "Page doesn't exist" }
 ```
 
-># GET /products/{category}/{sub-category}/{id}
->[category, sub-category and id is required]
-## Access list of items that are stored under spesific sub-category
+># GET /products/{category}
+>[category is required]
+## Access list of items that are stored under specific category
 ### Should access /product/{id} first and then use only required fields
 Success Response:
 ```
 Status Code: 200
 Response:
- {
-    "id": string
+[
+    {
+        "categoryId" : string,
+        "categoryName" : string,
+        "subCategory" : {
+            id : string,
+            name: string,
+        }
+    }
+]
+```
+Error Response:
+```
+Code: 404 NOT FOUND
+Content: { error : "Page doesn't exist" }
+```
+
+># GET /products/{category}/{sub-category}
+>[category is required]
+## Access list of items that are stored under specific sub-category
+### Should access /product/{id} first and then use only required fields
+Success Response:
+```
+Status Code: 200
+Response:
+[
+    {
+    "productId": string
     "title": string,
     "price": {
       "value": integer,
@@ -48,6 +74,7 @@ Response:
     },
     "image": string (URL or location)
   }
+]
 ```
 Error Response:
 ```
