@@ -11,6 +11,7 @@ export default class MyStack extends sst.Stack {
         "GET /product/{id}": "src/product.main",
         "GET /most-popular": "src/mostPopular.main",
         "GET /products/category/{category-id}": "src/category.main",
+        "GET /products/sub-category/{sub-category-id}": "src/subCategory.main",
       },
     });
 
