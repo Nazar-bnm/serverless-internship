@@ -19,5 +19,5 @@
     "strictPropertyInitialization": false,
     "typeRoots": ["./node_modules/@types"]
   },
-  "include": ["lib","src", "mocks/products.ts"]
+  "include": ["lib","src", "mocks/products.ts", "mocks/categories.ts"]
 }
