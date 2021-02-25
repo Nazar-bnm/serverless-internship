@@ -9,9 +9,9 @@ export default class MyStack extends sst.Stack {
     const api = new sst.Api(this, "Api", {
       routes: {
         "GET /product/{id}": "src/product.main",
+        "GET /products/categories/{id}": "src/categories.main",
+        "GET /products/sub-categories/{id}": "src/subCategories.main",
         "GET /most-popular": "src/mostPopular.main",
-        "GET /products/category/{category-id}": "src/category.main",
-        "GET /products/sub-category/{sub-category-id}": "src/subCategory.main",
       },
     });
 

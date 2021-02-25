@@ -1,30 +1,30 @@
-interface sub {
+interface SubCategory {
   "id": string,
   "name": string
 }
 
 interface Category {
-  "categoryId": string,
-  "categoryName": string,
-  "subCategories": sub[]
+  "id": string,
+  "name": string,
+  "subCategories": SubCategory[]
 }
 
 const categories: { [key: string]: Category } = {
   '1-walls': {
-    "categoryId": '1-walls',
-    "categoryName": 'walls',
+    "id": '1-walls',
+    "name": 'walls',
     "subCategories": [
       {
         "id": '11-paint',
         "name": "paint"
       },
       {
-        "id": '12-wallpaper',
-        "name": "wallpaper"
+        "id": '12-wallpapers',
+        "name": "wallpapers"
       },
       {
-        "id": '13-window',
-        "name": "window"
+        "id": '13-windows',
+        "name": "windows"
       },
       {
         "id": '14-doors',
@@ -33,8 +33,8 @@ const categories: { [key: string]: Category } = {
     ]
   },
   '2-floor': {
-    "categoryId": '2-floor',
-    "categoryName": 'floor',
+    "id": '2-floor',
+    "name": 'floor',
     "subCategories": [
       {
         "id": '21-parquet',
@@ -62,63 +62,62 @@ const categories: { [key: string]: Category } = {
       }
     ]
   },
-  '3-furnuture': {
-    "categoryId": '3-furnuture',
-    "categoryName": 'furnuture',
+  '3-furniture': {
+    "id": '3-furniture',
+    "name": 'furniture',
     "subCategories": [
       {
         "id": '31-room',
         "name": "room"
       },
       {
-        "id": '32-material',
-        "name": "material"
+        "id": '32-materials',
+        "name": "materials"
       },
       {
         "id": '33-cabinet',
         "name": "cabinet furniture"
       },
       {
-        "id": '34-table',
-        "name": "table"
+        "id": '34-tables',
+        "name": "tables"
       },
       {
-        "id": '35-sofa',
-        "name": "sofa"
+        "id": '35-sofas',
+        "name": "sofas"
       },
       {
-        "id": '36-chair',
-        "name": "chair"
+        "id": '36-chairs',
+        "name": "chairs"
       }
     ]
   },
   '4-decor': {
-    "categoryId": '4-decor',
-    "categoryName": 'decor',
+    "id": '4-decor',
+    "name": 'decor',
     "subCategories": [
       {
         "id": '41-painting',
         "name": "painting"
       },
       {
-        "id": '42-plant',
-        "name": "plant"
+        "id": '42-plants',
+        "name": "plants"
       },
       {
         "id": '33-holiday',
         "name": "holiday decor"
       },
       {
-        "id": '44-lamp',
-        "name": "lamp"
+        "id": '44-lamps',
+        "name": "lamps"
       },
       {
-        "id": '45-mirror',
-        "name": "morror"
+        "id": '45-mirrors',
+        "name": "mirrors"
       }
     ]
   }
 }
 
 export default categories;
-

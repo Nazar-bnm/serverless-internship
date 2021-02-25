@@ -1,9 +1,7 @@
-import { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
-import mostPopularProducts from "../mocks/mostPopularProducts";
+import { APIGatewayProxyResult } from "aws-lambda";
+import mostPopularProducts from "../mocks/mockedMostPopular";
 
-export async function main(
-  event: APIGatewayProxyEvent
-): Promise<APIGatewayProxyResult> {
+export async function main(): Promise<APIGatewayProxyResult> {
   return {
     statusCode: 200,
     body: JSON.stringify(mostPopularProducts),

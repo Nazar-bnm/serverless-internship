@@ -1,17 +1,17 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
-import products from "../mocks/mockedProducts";
+import subCategories from "../mocks/mockedSubCategories";
 
 export async function main(
   event: APIGatewayProxyEvent
 ): Promise<APIGatewayProxyResult> {
-  const productData =
+  const subCategoryData =
     event.pathParameters && event.pathParameters.id
-      ? products[event.pathParameters.id]
-      : null;
-  return productData
+      ? subCategories[event.pathParameters.id]
+      : Object.values(subCategories).map(({ id, name }) => ({ id, name }));
+  return subCategoryData
     ? {
         statusCode: 200,
-        body: JSON.stringify(productData),
+        body: JSON.stringify(subCategoryData),
       }
     : {
         statusCode: 404,
