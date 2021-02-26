@@ -8,7 +8,7 @@ export async function main(
 
   if (event.pathParameters && event.pathParameters.id) {
     const subCategory = subCategories[event.pathParameters.id];
-    const products: Product[] = subCategory.products!;
+    const products: Product[] = subCategory.products;
     const queryParameters = event.queryStringParameters;
     const { skip = 0, limit = 0 } = queryParameters || {};
 

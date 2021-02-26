@@ -21,7 +21,8 @@ interface SubCategory {
     id: string,
     name: string,
   },
-  products?: Product[]
+  products: Product[]
+
 }
 
 const subCategories: { [key: string]: SubCategory } = {
@@ -31,7 +32,8 @@ const subCategories: { [key: string]: SubCategory } = {
     category: {
       id: '1-walls',
       name: 'walls',
-    }
+    },
+    products: [],
   },
   '12-wallpapers': {
     id: '12-wallpapers',
@@ -39,7 +41,8 @@ const subCategories: { [key: string]: SubCategory } = {
     category: {
       id: '1-walls',
       name: 'walls',
-    }
+    },
+    products: [],
   },
   '13-windows': {
     id: '13-windows',
@@ -47,7 +50,8 @@ const subCategories: { [key: string]: SubCategory } = {
     category: {
       id: '1-walls',
       name: 'walls',
-    }
+    },
+    products: [],
   },
   '14-doors': {
     id: '14-doors',
@@ -55,7 +59,8 @@ const subCategories: { [key: string]: SubCategory } = {
     category: {
       id: '1-walls',
       name: 'walls',
-    }
+    },
+    products: [],
   },
   '21-parquet': {
     id: '21-parquet',
@@ -63,7 +68,8 @@ const subCategories: { [key: string]: SubCategory } = {
     category: {
       id: '2-floor',
       name: 'floor',
-    }
+    },
+    products: [],
   },
   '22-linoleum': {
     id: '22-linoleum',
@@ -71,7 +77,8 @@ const subCategories: { [key: string]: SubCategory } = {
     category: {
       id: '2-floor',
       name: 'floor',
-    }
+    },
+    products: [],
   },
   '23-carpet': {
     id: '23-carpet',
@@ -79,7 +86,8 @@ const subCategories: { [key: string]: SubCategory } = {
     category: {
       id: '2-floor',
       name: 'floor',
-    }
+    },
+    products: [],
   },
   '24-laminate': {
     id: '24-laminate',
@@ -87,7 +95,8 @@ const subCategories: { [key: string]: SubCategory } = {
     category: {
       id: '2-floor',
       name: 'floor',
-    }
+    },
+    products: [],
   },
   '25-baseboard': {
     id: '25-baseboard',
@@ -95,7 +104,8 @@ const subCategories: { [key: string]: SubCategory } = {
     category: {
       id: '2-floor',
       name: 'floor',
-    }
+    },
+    products: [],
   },
   '26-tile': {
     id: '26-tile',
@@ -103,7 +113,8 @@ const subCategories: { [key: string]: SubCategory } = {
     category: {
       id: '2-floor',
       name: 'floor',
-    }
+    },
+    products: [],
   },
   '31-room': {
     id: '31-room',
@@ -111,7 +122,8 @@ const subCategories: { [key: string]: SubCategory } = {
     category: {
       id: '3-furniture',
       name: 'furniture',
-    }
+    },
+    products: [],
   },
   '32-materials': {
     id: '32-materials',
@@ -119,7 +131,8 @@ const subCategories: { [key: string]: SubCategory } = {
     category: {
       id: '3-furniture',
       name: 'furniture',
-    }
+    },
+    products: [],
   },
   '33-cabinet': {
     id: '33-cabinet',
@@ -127,7 +140,8 @@ const subCategories: { [key: string]: SubCategory } = {
     category: {
       id: '3-furniture',
       name: 'furniture',
-    }
+    },
+    products: [],
   },
   '34-tables': {
     id: '34-tables',
@@ -135,7 +149,8 @@ const subCategories: { [key: string]: SubCategory } = {
     category: {
       id: '3-furniture',
       name: 'furniture',
-    }
+    },
+    products: [],
   },
   '35-sofas': {
     id: '35-sofas',
@@ -143,7 +158,8 @@ const subCategories: { [key: string]: SubCategory } = {
     category: {
       id: '3-furniture',
       name: 'furniture',
-    }
+    },
+    products: [],
   },
   '36-chairs': {
     id: '36-chairs',
@@ -151,7 +167,8 @@ const subCategories: { [key: string]: SubCategory } = {
     category: {
       id: '3-furniture',
       name: 'furniture',
-    }
+    },
+    products: [],
   },
   '41-painting': {
     id: '41-painting',
@@ -159,7 +176,8 @@ const subCategories: { [key: string]: SubCategory } = {
     category: {
       id: '4-decor',
       name: 'decor',
-    }
+    },
+    products: [],
   },
   '42-plants': {
     id: '42-plants',
@@ -167,7 +185,8 @@ const subCategories: { [key: string]: SubCategory } = {
     category: {
       id: '4-decor',
       name: 'decor',
-    }
+    },
+    products: [],
   },
   '33-holiday': {
     id: '33-holiday',
@@ -175,7 +194,8 @@ const subCategories: { [key: string]: SubCategory } = {
     category: {
       id: '4-decor',
       name: 'decor',
-    }
+    },
+    products: [],
   },
   '44-lamps': {
     id: '44-lamps',
@@ -183,7 +203,8 @@ const subCategories: { [key: string]: SubCategory } = {
     category: {
       id: '4-decor',
       name: 'decor',
-    }
+    },
+    products: [],
   },
   '45-mirrors': {
     id: '45-mirrors',
@@ -191,7 +212,8 @@ const subCategories: { [key: string]: SubCategory } = {
     category: {
       id: '4-decor',
       name: 'decor',
-    }
+    },
+    products: []
   }
 }
 
