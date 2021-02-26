@@ -7,6 +7,10 @@ export interface Product {
     value: number,
     currency: string
   },
+  amount: {
+    value: number,
+    unit: string
+  },
   mainImage: string
 }
 
@@ -195,8 +199,8 @@ Object.keys(subCategories).forEach((key) => {
   subCategories[key].products =
     Object.values(products)
       .filter((product) => product.subCategory.id === key)
-      .map(({ id, name, price, mainImage }): Product => ({
-        id, name, price, mainImage
+    .map(({ id, name, price, amount, mainImage,  }): Product => ({
+        id, name, price, amount, mainImage,
       }));
 });
 
