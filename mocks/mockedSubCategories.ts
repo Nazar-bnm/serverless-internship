@@ -7,10 +7,6 @@ export interface Product {
     value: number,
     currency: string
   },
-  amount: {
-    value: number,
-    unit: string
-  },
   mainImage: string
 }
 
@@ -21,8 +17,8 @@ interface SubCategory {
     id: string,
     name: string,
   },
-  products: Product[]
-
+  productsCount: number,
+  products: Product[],
 }
 
 const subCategories: { [key: string]: SubCategory } = {
@@ -33,6 +29,7 @@ const subCategories: { [key: string]: SubCategory } = {
       id: '1-walls',
       name: 'walls',
     },
+    productsCount: 0,
     products: [],
   },
   '12-wallpapers': {
@@ -42,6 +39,7 @@ const subCategories: { [key: string]: SubCategory } = {
       id: '1-walls',
       name: 'walls',
     },
+    productsCount: 0,
     products: [],
   },
   '13-windows': {
@@ -51,6 +49,7 @@ const subCategories: { [key: string]: SubCategory } = {
       id: '1-walls',
       name: 'walls',
     },
+    productsCount: 0,
     products: [],
   },
   '14-doors': {
@@ -60,6 +59,7 @@ const subCategories: { [key: string]: SubCategory } = {
       id: '1-walls',
       name: 'walls',
     },
+    productsCount: 0,
     products: [],
   },
   '21-parquet': {
@@ -69,6 +69,7 @@ const subCategories: { [key: string]: SubCategory } = {
       id: '2-floor',
       name: 'floor',
     },
+    productsCount: 0,
     products: [],
   },
   '22-linoleum': {
@@ -78,6 +79,7 @@ const subCategories: { [key: string]: SubCategory } = {
       id: '2-floor',
       name: 'floor',
     },
+    productsCount: 0,
     products: [],
   },
   '23-carpet': {
@@ -87,6 +89,7 @@ const subCategories: { [key: string]: SubCategory } = {
       id: '2-floor',
       name: 'floor',
     },
+    productsCount: 0,
     products: [],
   },
   '24-laminate': {
@@ -96,6 +99,7 @@ const subCategories: { [key: string]: SubCategory } = {
       id: '2-floor',
       name: 'floor',
     },
+    productsCount: 0,
     products: [],
   },
   '25-baseboard': {
@@ -105,6 +109,7 @@ const subCategories: { [key: string]: SubCategory } = {
       id: '2-floor',
       name: 'floor',
     },
+    productsCount: 0,
     products: [],
   },
   '26-tile': {
@@ -114,6 +119,7 @@ const subCategories: { [key: string]: SubCategory } = {
       id: '2-floor',
       name: 'floor',
     },
+    productsCount: 0,
     products: [],
   },
   '31-room': {
@@ -123,6 +129,7 @@ const subCategories: { [key: string]: SubCategory } = {
       id: '3-furniture',
       name: 'furniture',
     },
+    productsCount: 0,
     products: [],
   },
   '32-materials': {
@@ -132,6 +139,7 @@ const subCategories: { [key: string]: SubCategory } = {
       id: '3-furniture',
       name: 'furniture',
     },
+    productsCount: 0,
     products: [],
   },
   '33-cabinet': {
@@ -141,6 +149,7 @@ const subCategories: { [key: string]: SubCategory } = {
       id: '3-furniture',
       name: 'furniture',
     },
+    productsCount: 0,
     products: [],
   },
   '34-tables': {
@@ -150,6 +159,7 @@ const subCategories: { [key: string]: SubCategory } = {
       id: '3-furniture',
       name: 'furniture',
     },
+    productsCount: 0,
     products: [],
   },
   '35-sofas': {
@@ -159,6 +169,7 @@ const subCategories: { [key: string]: SubCategory } = {
       id: '3-furniture',
       name: 'furniture',
     },
+    productsCount: 0,
     products: [],
   },
   '36-chairs': {
@@ -168,6 +179,7 @@ const subCategories: { [key: string]: SubCategory } = {
       id: '3-furniture',
       name: 'furniture',
     },
+    productsCount: 0,
     products: [],
   },
   '41-painting': {
@@ -177,6 +189,7 @@ const subCategories: { [key: string]: SubCategory } = {
       id: '4-decor',
       name: 'decor',
     },
+    productsCount: 0,
     products: [],
   },
   '42-plants': {
@@ -186,6 +199,7 @@ const subCategories: { [key: string]: SubCategory } = {
       id: '4-decor',
       name: 'decor',
     },
+    productsCount: 0,
     products: [],
   },
   '33-holiday': {
@@ -195,6 +209,7 @@ const subCategories: { [key: string]: SubCategory } = {
       id: '4-decor',
       name: 'decor',
     },
+    productsCount: 0,
     products: [],
   },
   '44-lamps': {
@@ -204,6 +219,7 @@ const subCategories: { [key: string]: SubCategory } = {
       id: '4-decor',
       name: 'decor',
     },
+    productsCount: 0,
     products: [],
   },
   '45-mirrors': {
@@ -213,17 +229,22 @@ const subCategories: { [key: string]: SubCategory } = {
       id: '4-decor',
       name: 'decor',
     },
+    productsCount: 0,
     products: []
   }
 }
 
 Object.keys(subCategories).forEach((key) => {
-  subCategories[key].products =
+  const subCategory = subCategories[key];
+
+  subCategory.products =
     Object.values(products)
       .filter((product) => product.subCategory.id === key)
-    .map(({ id, name, price, amount, mainImage,  }): Product => ({
-        id, name, price, amount, mainImage,
+    .map(({ id, name, price, mainImage, }): Product => ({
+        id, name, price, mainImage,
       }));
+  
+  subCategory.productsCount = subCategory.products.length;
 });
 
 export default subCategories;
